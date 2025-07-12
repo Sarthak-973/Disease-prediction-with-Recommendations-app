@@ -32,6 +32,6 @@ disease_prediction_project/
 - The model is trained on a labeled dataset with 132 symptoms mapped to 41 diseases.
 - Source: Curated from open-source medical datasets
 
-```
+
 
 
