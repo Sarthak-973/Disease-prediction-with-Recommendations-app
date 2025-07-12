@@ -3,22 +3,20 @@ import joblib
 import pathlib
 import streamlit as st
 
-# ------------------------------------------------------------------
-# 1️⃣  Locate the models folder relative to this file
-# ------------------------------------------------------------------
+# Locate the models folder relative to this file
+
 BASE_DIR  = pathlib.Path(__file__).resolve().parents[1]
 MODEL_DIR = BASE_DIR / "models"
 
-# ------------------------------------------------------------------
-# 2️⃣  Load trained model + symptom index
-# ------------------------------------------------------------------
+
+# Load trained model + symptom index
+
 model           = joblib.load(MODEL_DIR / "naive_bayes.pkl")
 symptom_index   = json.loads((MODEL_DIR / "symptom_index.json").read_text())
 symptoms_list   = list(symptom_index.keys())          # for dropdown
 
-# ------------------------------------------------------------------
-# 3️⃣  Disease → {cure, doctor}.  Add more entries freely.
-# ------------------------------------------------------------------
+# Disease → {cure, doctor}.  Add more entries freely.
+
 disease_info = {
     "(vertigo) Paroymsal  Positional Vertigo": {
         "cure": "Vestibular therapy and head movement exercises.",
@@ -186,10 +184,8 @@ disease_info = {
     }
 }
 
+# Streamlit UI
 
-# ------------------------------------------------------------------
-# 4️⃣  Streamlit UI
-# ------------------------------------------------------------------
 st.set_page_config(page_title="Disease Prediction", layout="centered")
 st.title("🧠 Disease Prediction from Symptoms")
 st.markdown("Select the symptoms you are experiencing:")
