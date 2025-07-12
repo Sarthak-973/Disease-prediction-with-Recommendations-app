@@ -34,5 +34,4 @@ disease_prediction_project/
 
 ```
 
-Enjoy!
-=======
+
